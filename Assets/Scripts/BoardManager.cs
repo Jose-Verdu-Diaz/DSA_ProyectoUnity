@@ -15,6 +15,9 @@ namespace Completed
         public GameObject[] wallTiles;                                    //Array of wall prefabs.
         public GameObject[] outerWallTiles;                                //Array of outer tile prefabs.
 
+        public GameObject piso;
+        public GameObject parede;
+    
         public string[][] mapMatrix;
 
         private Transform boardHolder;                                    //A variable to store a reference to the transform of our Board object.
@@ -35,12 +38,15 @@ namespace Completed
                     GameObject toInstantiate = floorTiles[Random.Range(0, floorTiles.Length)];
 
                     if (mapMatrix[y][x]=="X")
-                        toInstantiate = outerWallTiles[Random.Range(0, outerWallTiles.Length)];
+                        toInstantiate = parede;
+                        //toInstantiate = outerWallTiles[Random.Range(0, outerWallTiles.Length)];
                     else if (mapMatrix[y][x] == "P")
-                        toInstantiate = wallTiles[Random.Range(0, wallTiles.Length)];
+                        toInstantiate = parede;
+                        //toInstantiate = wallTiles[Random.Range(0, wallTiles.Length)];
                     else if (mapMatrix[y][x] == "E")
                         toInstantiate = exit;
-
+                    else if (mapMatrix[y][x] == "O")
+                        toInstantiate = piso;
                     //Instantiate the GameObject instance using the prefab chosen for toInstantiate at the Vector3 corresponding to current grid position in loop, cast it to GameObject.
                     GameObject instance = Instantiate(toInstantiate, new Vector3(x, mapMatrix.Length - y, 0f), Quaternion.identity) as GameObject;
 
@@ -69,7 +75,7 @@ namespace Completed
         //SetupScene initializes our level and calls the previous functions to lay out the game board
         public void SetupScene(int level)
         {
-            ParseMapString(@"C:\Users\pepv\Desktop\mapa1.csv");//Es una ruta absoluta, lo sé, es para testear.
+            ParseMapString(@"/Users/joseluizjunior/Documents/mapas/mapa1.csv");//Es una ruta absoluta, lo sé, es para testear.
 
             //Creates the outer walls and floor.
             BoardSetup();
