@@ -15,9 +15,11 @@ namespace Completed
         public GameObject[] wallTiles;                                    //Array of wall prefabs.
         public GameObject[] outerWallTiles;                                //Array of outer tile prefabs.
 
-        public GameObject piso;
+        public GameObject piso1;
+        public GameObject piso2;
+        public GameObject piso3;
         public GameObject parede;
-    
+
         public string[][] mapMatrix;
 
         private Transform boardHolder;                                    //A variable to store a reference to the transform of our Board object.
@@ -26,7 +28,10 @@ namespace Completed
         void BoardSetup()
         {
             //Instantiate Board and set boardHolder to its transform.
-            boardHolder = new GameObject("Board").transform;
+            //boardHolder = new GameObject("Board").transform;
+            boardHolder = GameObject.Find("Board").transform;
+               
+            int rand = 0;
 
             //Loop along x axis, starting from -1 (to fill corner) with floor or outerwall edge tiles.
             for (int y =0; y < mapMatrix.Length; y++)
@@ -39,14 +44,32 @@ namespace Completed
 
                     if (mapMatrix[y][x]=="X")
                         toInstantiate = parede;
+
+
                         //toInstantiate = outerWallTiles[Random.Range(0, outerWallTiles.Length)];
+
                     else if (mapMatrix[y][x] == "P")
                         toInstantiate = parede;
                         //toInstantiate = wallTiles[Random.Range(0, wallTiles.Length)];
                     else if (mapMatrix[y][x] == "E")
                         toInstantiate = exit;
-                    else if (mapMatrix[y][x] == "O")
-                        toInstantiate = piso;
+                    else if (mapMatrix[y][x] == "O"){
+
+                        rand = Random.Range(0, 10);
+                        // 80% piso_3 [0,1,2,3,4,5,6,7]
+                        // 10% piso_2 [8]
+                        // 10% piso_1 [9]
+                        if(rand == 9){
+                            toInstantiate = piso1;
+                        }else if(rand == 8){
+                            toInstantiate = piso2;
+                        }else{
+                            toInstantiate = piso3;
+                        }
+
+                    }
+
+
                     //Instantiate the GameObject instance using the prefab chosen for toInstantiate at the Vector3 corresponding to current grid position in loop, cast it to GameObject.
                     GameObject instance = Instantiate(toInstantiate, new Vector3(x, mapMatrix.Length - y, 0f), Quaternion.identity) as GameObject;
 

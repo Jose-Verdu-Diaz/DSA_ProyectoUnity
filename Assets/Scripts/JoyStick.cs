@@ -32,8 +32,12 @@ public class JoyStick : MonoBehaviour
 
             pointA = Camera.main.ScreenToWorldPoint(new Vector3(Input.mousePosition.x, Input.mousePosition.y, Camera.main.transform.position.z));
             // No screen view da o default value
-            circle.transform.position = new Vector3(pointA.x, pointA.y, circle.position.z);;
-            outerCircle.transform.position = new Vector3(pointA.x, pointA.y, outerCircle.position.z);;
+            //circle.transform.position = new Vector3(pointA.x, pointA.y, circle.position.z);
+            //outerCircle.transform.position = new Vector3(pointA.x, pointA.y, outerCircle.position.z);
+
+            circle.transform.position = new Vector2(pointA.x, pointA.y);
+            outerCircle.transform.position = new Vector2(pointA.x, pointA.y);
+
             
             circle.GetComponent<SpriteRenderer>().enabled = true;
             outerCircle.GetComponent<SpriteRenderer>().enabled = true;
@@ -66,9 +70,9 @@ public class JoyStick : MonoBehaviour
             Vector2 direction = Vector2.ClampMagnitude(offset, 1.0f);
             moveCharacter(direction);
             
-            circle.transform.position = new Vector3(pointA.x + direction.x, pointA.y + direction.y, circle.position.z);
+            //circle.transform.position = new Vector3(pointA.x + direction.x, pointA.y + direction.y, circle.position.z);
 
-            //circle.transform.position = new Vector2(pointA.x + direction.x, pointA.y + direction.y);
+            circle.transform.position = new Vector2(pointA.x + direction.x, pointA.y + direction.y);
 
         }
 
@@ -77,7 +81,7 @@ public class JoyStick : MonoBehaviour
     void moveCharacter(Vector2 direction){
 
         player.Translate(direction * speed * Time.deltaTime);// suave durante os frames
-        
+     
     }
 
 
