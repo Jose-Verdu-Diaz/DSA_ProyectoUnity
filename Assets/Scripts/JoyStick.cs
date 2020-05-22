@@ -7,7 +7,7 @@ public class JoyStick : MonoBehaviour
 
     public Transform player;
     public float speed = 5.0f;
-
+    public float movimentoJoy;
     private bool touchStart = false;
 
     private Vector2 pointA;
@@ -67,12 +67,15 @@ public class JoyStick : MonoBehaviour
         if(touchStart){
 
             Vector2 offset = pointB - pointA;
+            // Movimento
+            Vector2 direction2 = Vector2.ClampMagnitude(offset, movimentoJoy);
+            // Velocidade
             Vector2 direction = Vector2.ClampMagnitude(offset, 1.0f);
             moveCharacter(direction);
             
             //circle.transform.position = new Vector3(pointA.x + direction.x, pointA.y + direction.y, circle.position.z);
 
-            circle.transform.position = new Vector2(pointA.x + direction.x, pointA.y + direction.y);
+            circle.transform.position = new Vector2(pointA.x + direction2.x, pointA.y + direction2.y);
 
         }
 
