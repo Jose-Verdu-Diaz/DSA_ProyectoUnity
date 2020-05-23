@@ -19,6 +19,9 @@ namespace Completed
         public GameObject piso2;
         public GameObject piso3;
         public GameObject parede;
+        
+
+        Vector3 paredesPOS = new Vector3();
 
         public string[][] mapMatrix;
 
@@ -42,10 +45,18 @@ namespace Completed
                     //Choose a random tile from our array of floor tile prefabs and prepare to instantiate it.
                     GameObject toInstantiate = floorTiles[Random.Range(0, floorTiles.Length)];
 
-                    if (mapMatrix[y][x]=="X")
+                    if (mapMatrix[y][x]=="X"){
                         toInstantiate = parede;
 
+                        paredesPOS.x = x;
+                        paredesPOS.y = y;
+                        paredesPOS.z = -0.5f;
 
+
+                        this.transform.position = paredesPOS;
+                        //toInstantiate.transform.position.z =
+                  
+                    }
                         //toInstantiate = outerWallTiles[Random.Range(0, outerWallTiles.Length)];
 
                     else if (mapMatrix[y][x] == "P")
@@ -77,8 +88,8 @@ namespace Completed
                     instance.transform.SetParent(boardHolder);
                 }
             }
-        }
 
+        }
         void ParseMapString(string filePath)//habrá que adaptarlo, de momento pilla un csv y lo parsea. En el futuro tiene que recibir el string de la BBDD
         {
             StreamReader sr = new StreamReader(filePath);
