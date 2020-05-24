@@ -11,4 +11,12 @@ public class SettingsMenu : MonoBehaviour{
 
     }
 
+
+    // Index do elemento que escolhemos
+    public void SetQuality(int qualityIndex){
+
+        QualitySettings.SetQualityLevel(qualityIndex);
+
+    }
+
 }
