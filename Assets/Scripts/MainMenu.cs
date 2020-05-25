@@ -16,4 +16,12 @@ public class MainMenu : MonoBehaviour
         Application.Quit();
     }
 
+
+    public void LoadLogin(){
+        
+        SceneManager.LoadScene("Login");
+
+    }
+
+
 }
