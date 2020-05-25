@@ -32,6 +32,7 @@ public class PauseMenu : MonoBehaviour{
             
             pauseMenuUI.SetActive(false);
             botaoPause.SetActive(true);
+            Camera.main.orthographicSize = 5.0f;
             Time.timeScale = 1f; // Volta ao normal cena
             GameIsPaused = false;
 
@@ -42,9 +43,9 @@ public class PauseMenu : MonoBehaviour{
         public void Pause(){
             botaoPause.SetActive(false);
             pauseMenuUI.SetActive(true);
+            Camera.main.orthographicSize = 3.0f;
             Time.timeScale = 0f; // Congela cena
             GameIsPaused = true;
-
 
         }
 
@@ -52,6 +53,7 @@ public class PauseMenu : MonoBehaviour{
         public void LoadMenu(){
 
             Time.timeScale = 1f; // Volta ao normal cena
+            Camera.main.orthographicSize = 5.0f;
             SceneManager.LoadScene("Menu");
 
         }
