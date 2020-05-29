@@ -13,6 +13,11 @@ public class Login : MonoBehaviour
 
     }
 
+    public void LoadRegistrar(){
+        
+        SceneManager.LoadScene("Registrar");
+
+    }
 
 
 }
