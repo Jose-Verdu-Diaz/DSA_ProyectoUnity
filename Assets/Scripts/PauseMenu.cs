@@ -8,26 +8,6 @@ public class PauseMenu : MonoBehaviour{
     public GameObject pauseMenuUI;
     public GameObject botaoPause;
     
-    void Update()
-    {
-        
-        // Colocar aqui que a seta voltar do celular tambem vai servir para pausar
-
-        if(Input.GetKeyDown(KeyCode.Escape)){
-
-            if(GameIsPaused){
-
-                Resume();
-            }else{  
-
-                Pause();
-            }
-
-
-
-        }
-
-    }
         public void Resume(){
             
             pauseMenuUI.SetActive(false);
