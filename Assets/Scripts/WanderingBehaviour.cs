@@ -8,6 +8,7 @@ public class WanderingBehaviour : MonoBehaviour
     private Vector2 direction;
 
     public float moveSpeed = 5f;
+    private float moveSpeedMultiplicator;
 
     private bool moving = false;
     private int randomSteps=0;
@@ -25,7 +26,8 @@ public class WanderingBehaviour : MonoBehaviour
         {
             direction = Random.insideUnitCircle.normalized;
 
-            randomSteps = Random.Range(100,1000);
+            randomSteps = Random.Range(100,800);
+            moveSpeedMultiplicator = Random.Range(0.5f, 2.5f);
 
             moving = true;
         }
@@ -33,10 +35,7 @@ public class WanderingBehaviour : MonoBehaviour
         {
             randomSteps--;
         }
-    }
 
-    private void LateUpdate()
-    {
         if (moving && randomSteps!=0)
         {
             moveNPC(direction);
@@ -45,13 +44,12 @@ public class WanderingBehaviour : MonoBehaviour
         else if(moving && randomSteps==0)
         {
             moving = false;
-            randomSteps = Random.Range(100, 1000);
+            randomSteps = Random.Range(100, 500);
         }
-
     }
 
     void moveNPC(Vector2 direction)
     {
-        rb.MovePosition((Vector2)transform.position + (direction * moveSpeed * Time.deltaTime));
+        rb.MovePosition((Vector2)transform.position + (direction * moveSpeed * moveSpeedMultiplicator * Time.deltaTime));
     }
 }
