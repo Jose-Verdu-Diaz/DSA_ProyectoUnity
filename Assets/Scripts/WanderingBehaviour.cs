@@ -52,4 +52,9 @@ public class WanderingBehaviour : MonoBehaviour
     {
         rb.MovePosition((Vector2)transform.position + (direction * moveSpeed * moveSpeedMultiplicator * Time.deltaTime));
     }
+
+    private void OnCollisionEnter2D(Collision2D collision)
+    {
+        Debug.Log("COLLISION");
+    }
 }
