@@ -6,6 +6,7 @@ TagManager:
   tags:
   - Abuela
   - ParedeCubo
+  - Item
   layers:
   - Default
   - TransparentFX
@@ -43,12 +44,15 @@ TagManager:
   - name: Default
     uniqueID: 0
     locked: 0
-  - name: Character
-    uniqueID: 489291445
-    locked: 0
   - name: Floor
     uniqueID: 1491696629
     locked: 0
   - name: Item
     uniqueID: 439132933
+    locked: 0
+  - name: Character
+    uniqueID: 489291445
+    locked: 0
+  - name: HUD
+    uniqueID: 3528649841
     locked: 0
