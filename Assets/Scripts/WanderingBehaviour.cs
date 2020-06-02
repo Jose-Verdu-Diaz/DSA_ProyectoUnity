@@ -55,6 +55,24 @@ public class WanderingBehaviour : MonoBehaviour
 
     private void OnCollisionEnter2D(Collision2D collision)
     {
-        Debug.Log("COLLISION");
+        direction = Vector2.Perpendicular(direction);
+
+        /*
+        if (collision.collider.tag == "Player") 
+        {
+            rb.constraints = RigidbodyConstraints2D.FreezeAll;
+        }
+        */
+    }
+
+    private void OnCollisionExit2D(Collision2D collision)
+    {
+        /*
+        if (collision.collider.tag == "Player")
+        {
+            rb.constraints = RigidbodyConstraints2D.None;
+            rb.constraints = RigidbodyConstraints2D.FreezeRotation;
+        }
+        */
     }
 }

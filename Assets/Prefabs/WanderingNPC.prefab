@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 7056461771069984858}
   - component: {fileID: 7056461771069984857}
   - component: {fileID: 8513842927903598630}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: WanderingNPC
   m_TagString: Untagged
   m_Icon: {fileID: 0}
