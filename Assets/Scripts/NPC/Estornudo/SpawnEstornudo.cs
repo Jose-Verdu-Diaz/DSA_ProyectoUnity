@@ -11,43 +11,57 @@ public class SpawnEstornudo : MonoBehaviour
     private Vector3 offset;
     private int pausaEstornudar;
 
+
     public AudioSource[] cough;
 
     // Start is called before the first frame update
     void Start()
     {
         pausaEstornudar = 1000;
+
+
+        int probEnfermo = Random.Range(1,100);
+        if (probEnfermo<50)
+        {
+            enfermo = true;
+        }
+        else
+        {
+            enfermo = false;
+        }
     }
 
     // Update is called once per frame
     void Update()
     {
-        if (pausaEstornudar==0)
+        if (enfermo)
         {
-            p = Random.Range(0,10000);
-            if (p <= probabiliadEstornudo)
+            if (pausaEstornudar==0)
             {
-                cough[Random.Range(0, cough.Length)].Play();
+                p = Random.Range(0,10000);
+                if (p <= probabiliadEstornudo)
+                {
+                    cough[Random.Range(0, cough.Length)].Play();
 
-                offset = transform.position;
-                Instantiate(estornudo, offset, Quaternion.identity);
-                offset.x = offset.x + 0.1f;
-                Instantiate(estornudo, offset, Quaternion.identity);
-                offset.x = offset.x - 0.2f;
-                Instantiate(estornudo, offset, Quaternion.identity);
-                offset.x = offset.x + 0.1f;
-                offset.y = offset.y + 0.1f;
-                Instantiate(estornudo, offset, Quaternion.identity);
-                offset.y = offset.y - 0.2f;
-                Instantiate(estornudo, offset, Quaternion.identity);
+                    offset = transform.position;
+                    Instantiate(estornudo, offset, Quaternion.identity);
+                    offset.x = offset.x + 0.1f;
+                    Instantiate(estornudo, offset, Quaternion.identity);
+                    offset.x = offset.x - 0.2f;
+                    Instantiate(estornudo, offset, Quaternion.identity);
+                    offset.x = offset.x + 0.1f;
+                    offset.y = offset.y + 0.1f;
+                    Instantiate(estornudo, offset, Quaternion.identity);
+                    offset.y = offset.y - 0.2f;
+                    Instantiate(estornudo, offset, Quaternion.identity);
 
-                pausaEstornudar = 1000;
+                    pausaEstornudar = 1000;
+                }
             }
-        }
-        else
-        {
-            pausaEstornudar--;
-        }
-        
+            else
+            {
+                pausaEstornudar--;
+            }
+        }        
     }
 }

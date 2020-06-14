@@ -15,6 +15,7 @@ namespace Completed
         public GameObject[] wallTiles;
         public GameObject wanderingNPC;
         public GameObject player;
+        public GameObject brocoli;
 
         public string[][] mapMatrix;
 
@@ -33,7 +34,7 @@ namespace Completed
 
                     foreach (string s in objects)
                     {
-                        GameObject toInstantiate = floorTiles[Random.Range(0, wallTiles.Length)];
+                        GameObject toInstantiate = floorTiles[Random.Range(0, floorTiles.Length)];
 
                         switch (s)
                         {
@@ -51,6 +52,9 @@ namespace Completed
                                 break;
                             case "W":
                                 toInstantiate = wanderingNPC;
+                                break;
+                            case "B":
+                                toInstantiate = brocoli;
                                 break;
                         }
                         GameObject instance = Instantiate(toInstantiate, new Vector3(x, mapMatrix.Length - y, 0f), Quaternion.identity) as GameObject;
