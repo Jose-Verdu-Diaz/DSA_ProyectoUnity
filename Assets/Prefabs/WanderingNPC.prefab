@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: 7056461771069984858}
   - component: {fileID: 7056461771069984857}
   - component: {fileID: 8513842927903598630}
+  - component: {fileID: 6269616674629683637}
   m_Layer: 11
   m_Name: WanderingNPC
   m_TagString: Untagged
@@ -145,3 +146,19 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   moveSpeed: 5
+--- !u!114 &6269616674629683637
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7056461771069984854}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 250c42a60cb492d4a9a67e0e658f594c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  estornudo: {fileID: 6123055498225231848, guid: 6eba062c0c822064086d80eda534201f,
+    type: 3}
+  enfermo: 1
+  probabiliadEstornudo: 8

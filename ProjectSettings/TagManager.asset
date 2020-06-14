@@ -17,9 +17,9 @@ TagManager:
   - 
   - 
   - BlockingLayer
-  - 
-  - 
-  - 
+  - Estornudo
+  - Player
+  - NPC
   - 
   - 
   - 
@@ -52,6 +52,9 @@ TagManager:
     locked: 0
   - name: Character
     uniqueID: 489291445
+    locked: 0
+  - name: Estornudo
+    uniqueID: 3592498823
     locked: 0
   - name: HUD
     uniqueID: 3528649841

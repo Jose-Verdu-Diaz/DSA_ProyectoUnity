@@ -135,7 +135,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   frequency: 0.5
   rotation: 0.15
-  destroyTime: 10
+  destroyTime: 5
   sprites:
   - {fileID: 21300000, guid: c2ddebf6d67c0cc408a325ddd1f7a07e, type: 3}
   - {fileID: 21300000, guid: d9225a584d829cc4fa7a4b6046f85edb, type: 3}
