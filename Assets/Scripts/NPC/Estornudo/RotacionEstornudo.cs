@@ -10,9 +10,6 @@ public class RotacionEstornudo : MonoBehaviour
 
     public Sprite[] sprites;
 
-    Quaternion posOffset = new Quaternion();
-    Quaternion tempPos = new Quaternion();
-
     void Start()
     {
         transform.GetComponent<SpriteRenderer>().sprite = sprites[Random.Range(0, sprites.Length)];

@@ -44,13 +44,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 44faedc8adbc66d4caeb86966a857f14, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  exit: {fileID: 7434210236572308785, guid: ac886976c7485d3409df30742bbf0af8, type: 3}
+  exit: {fileID: 6922968167664002933, guid: 83e5d68c099e04720a3919e06fef55a6, type: 3}
   floorTiles:
-  - {fileID: 6173804543686743796, guid: e43dcab3d11bb374193eda3f98b28ced, type: 3}
+  - {fileID: 354924966677843303, guid: 2abd513b2830043b98f12b2efc76bd86, type: 3}
+  - {fileID: 354924966677843303, guid: 2abd513b2830043b98f12b2efc76bd86, type: 3}
+  - {fileID: 6857742280577866799, guid: e3678b455c8da4075bb3c23fe006400c, type: 3}
+  - {fileID: 5460970457411227002, guid: df573bda6980f42999beaeb6273dce20, type: 3}
   wallTiles:
-  - {fileID: 1424476672595895146, guid: 232fc8840fc0a1c4098a2e2c3d89ea4a, type: 3}
-  outerWallTiles:
-  - {fileID: 6019663636732451209, guid: 690aec5e7a8b1f647ab159e782c09b3f, type: 3}
+  - {fileID: 9036177994413589298, guid: 2f7e6c17301b54231994b58f0052c727, type: 3}
 --- !u!114 &8731553285201911544
 MonoBehaviour:
   m_ObjectHideFlags: 0

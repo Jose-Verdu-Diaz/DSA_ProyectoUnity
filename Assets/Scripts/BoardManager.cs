@@ -14,9 +14,6 @@ namespace Completed
         public GameObject[] floorTiles;                                    //Array of floor prefabs.
         public GameObject[] wallTiles;                                    //Array of wall prefabs.
         //public GameObject[] outerWallTiles;                                //Array of outer tile prefabs.
-        
-
-        Vector3 paredesPOS = new Vector3();
 
         public string[][] mapMatrix;
 
