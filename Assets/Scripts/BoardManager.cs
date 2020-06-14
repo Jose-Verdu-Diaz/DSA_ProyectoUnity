@@ -10,51 +10,56 @@ namespace Completed
 
     public class BoardManager : MonoBehaviour
     {
-        public GameObject exit;                                            //Prefab to spawn for exit.
-        public GameObject[] floorTiles;                                    //Array of floor prefabs.
-        public GameObject[] wallTiles;                                    //Array of wall prefabs.
-        //public GameObject[] outerWallTiles;                                //Array of outer tile prefabs.
+        public GameObject exit;
+        public GameObject[] floorTiles;
+        public GameObject[] wallTiles;
+        public GameObject wanderingNPC;
+        public GameObject player;
 
         public string[][] mapMatrix;
 
-        private Transform boardHolder;                                    //A variable to store a reference to the transform of our Board object.
+        private Transform boardHolder;
 
-        //Sets up the outer walls and floor (background) of the game board.
+
         void BoardSetup()
         {
-            //Instantiate Board and set boardHolder to its transform.
-            //boardHolder = new GameObject("Board").transform;
             boardHolder = GameObject.Find("Board").transform;
 
-            //Loop along x axis, starting from -1 (to fill corner) with floor or outerwall edge tiles.
             for (int y =0; y < mapMatrix.Length; y++)
             {
-                //Loop along y axis, starting from -1 to place floor or outerwall tiles.
                 for (int x = 0; x < mapMatrix[y].Length; x++)
                 {
-                    //Choose a random tile from our array of floor tile prefabs and prepare to instantiate it.
-                    GameObject toInstantiate = floorTiles[Random.Range(0, floorTiles.Length)];
+                    string[] objects = mapMatrix[y][x].Split('.');
 
-                    if (mapMatrix[y][x]=="X"){
-                        toInstantiate = wallTiles[Random.Range(0, wallTiles.Length)];
-                  
+                    foreach (string s in objects)
+                    {
+                        GameObject toInstantiate = floorTiles[Random.Range(0, wallTiles.Length)];
+
+                        switch (s)
+                        {
+                            case "X":
+                                toInstantiate = wallTiles[Random.Range(0, wallTiles.Length)];
+                                break;
+                            case "P":
+                                toInstantiate = wallTiles[Random.Range(0, wallTiles.Length)];
+                                break;
+                            case "E":
+                                toInstantiate = exit;
+                                break;
+                            case "C":
+                                toInstantiate = player;
+                                break;
+                            case "W":
+                                toInstantiate = wanderingNPC;
+                                break;
+                        }
+                        GameObject instance = Instantiate(toInstantiate, new Vector3(x, mapMatrix.Length - y, 0f), Quaternion.identity) as GameObject;
+                        instance.transform.SetParent(boardHolder);
                     }
-                    else if (mapMatrix[y][x] == "P")
-                        toInstantiate = wallTiles[Random.Range(0, wallTiles.Length)];
-                        //toInstantiate = wallTiles[Random.Range(0, wallTiles.Length)];
-                    else if (mapMatrix[y][x] == "E")
-                        toInstantiate = exit;
-
-
-                    //Instantiate the GameObject instance using the prefab chosen for toInstantiate at the Vector3 corresponding to current grid position in loop, cast it to GameObject.
-                    GameObject instance = Instantiate(toInstantiate, new Vector3(x, mapMatrix.Length - y, 0f), Quaternion.identity) as GameObject;
-
-                    //Set the parent of our newly instantiated object instance to boardHolder, this is just organizational to avoid cluttering hierarchy.
-                    instance.transform.SetParent(boardHolder);
                 }
             }
-
         }
+
         void ParseMapString(string filePath)//habrá que adaptarlo, de momento pilla un csv y lo parsea. En el futuro tiene que recibir el string de la BBDD
         {
             StreamReader sr = new StreamReader(filePath);
@@ -71,12 +76,10 @@ namespace Completed
             this.mapMatrix = lines.ToArray();
         }
 
-        //SetupScene initializes our level and calls the previous functions to lay out the game board
+
         public void SetupScene(int level)
         {
-            ParseMapString("Assets/Maps/01.csv");//Es una ruta absoluta, lo sé, es para testear.
-
-            //Creates the outer walls and floor.
+            ParseMapString("Assets/Maps/02.csv");
             BoardSetup();
         }
     }
