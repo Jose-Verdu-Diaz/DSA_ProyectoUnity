@@ -11,6 +11,8 @@ public class SpawnEstornudo : MonoBehaviour
     private Vector3 offset;
     private int pausaEstornudar;
 
+    public AudioSource[] cough;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -25,6 +27,8 @@ public class SpawnEstornudo : MonoBehaviour
             p = Random.Range(0,10000);
             if (p <= probabiliadEstornudo)
             {
+                cough[Random.Range(0, cough.Length)].Play();
+
                 offset = transform.position;
                 Instantiate(estornudo, offset, Quaternion.identity);
                 offset.x = offset.x + 0.1f;

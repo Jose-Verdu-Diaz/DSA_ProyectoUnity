@@ -11,68 +11,56 @@ public class WanderingBehaviour : MonoBehaviour
     private float moveSpeedMultiplicator;
 
     private bool moving = false;
-    private int randomSteps=0;
+    private float randomSteps=0;
 
     // Start is called before the first frame update
     void Start()
     {
         rb = this.GetComponent<Rigidbody2D>();
+        randomSteps = Random.Range(1f, 3f);
     }
 
     // Update is called once per frame
     private void Update()
     {
-        if (!moving && randomSteps==0)
+        if (moving)
         {
-            direction = Random.insideUnitCircle.normalized;
-
-            randomSteps = Random.Range(100,800);
-            moveSpeedMultiplicator = Random.Range(0.5f, 2.5f);
-
-            moving = true;
+            if (randomSteps>0)
+            {
+                rb.velocity = direction*moveSpeedMultiplicator;
+                randomSteps-=Time.deltaTime;
+            }
+            else
+            {
+                moving = false;
+                rb.velocity = new Vector2(0f,0f);
+                randomSteps = Random.Range(1f, 3f);
+            }
         }
-        else if (!moving && randomSteps!=0)
+        else
         {
-            randomSteps--;
-        }
+            if (randomSteps > 0)
+            {
+                randomSteps -= Time.deltaTime;
+            }
+            else
+            {
+                direction = Random.insideUnitCircle.normalized;
 
-        if (moving && randomSteps!=0)
-        {
-            moveNPC(direction);
-            randomSteps--;
-        }
-        else if(moving && randomSteps==0)
-        {
-            moving = false;
-            randomSteps = Random.Range(100, 500);
-        }
-    }
+                randomSteps = Random.Range(1f, 3f);
+                moveSpeedMultiplicator = Random.Range(1f, 1.5f);
 
-    void moveNPC(Vector2 direction)
-    {
-        rb.MovePosition((Vector2)transform.position + (direction * moveSpeed * moveSpeedMultiplicator * Time.deltaTime));
+                moving = true;
+            }
+        }
     }
 
     private void OnCollisionEnter2D(Collision2D collision)
     {
-        direction = Vector2.Perpendicular(direction);
-
-        /*
-        if (collision.collider.tag == "Player") 
+        if (collision.collider.tag == "Wall")
         {
-            rb.constraints = RigidbodyConstraints2D.FreezeAll;
+            direction = Vector2.Perpendicular(direction);
         }
-        */
     }
 
-    private void OnCollisionExit2D(Collision2D collision)
-    {
-        /*
-        if (collision.collider.tag == "Player")
-        {
-            rb.constraints = RigidbodyConstraints2D.None;
-            rb.constraints = RigidbodyConstraints2D.FreezeRotation;
-        }
-        */
-    }
 }

@@ -12,7 +12,7 @@ public class CameraFollow : MonoBehaviour
     // Logo depois
 
     // vai mudar os itens tambem
-    void LateUpdate(){
+    void Update(){
 
         tempVec3.x = target.position.x;
         tempVec3.y = target.position.y;
