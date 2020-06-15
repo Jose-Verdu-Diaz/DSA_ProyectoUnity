@@ -24,7 +24,6 @@ public class WanderingBehaviour : MonoBehaviour
     private void Update()
     {
         if (moving)
-        {
             if (randomSteps>0)
             {
                 rb.velocity = direction*moveSpeedMultiplicator;
@@ -36,13 +35,9 @@ public class WanderingBehaviour : MonoBehaviour
                 rb.velocity = new Vector2(0f,0f);
                 randomSteps = Random.Range(1f, 3f);
             }
-        }
         else
-        {
             if (randomSteps > 0)
-            {
                 randomSteps -= Time.deltaTime;
-            }
             else
             {
                 direction = Random.insideUnitCircle.normalized;
@@ -52,15 +47,12 @@ public class WanderingBehaviour : MonoBehaviour
 
                 moving = true;
             }
-        }
     }
 
     private void OnCollisionEnter2D(Collision2D collision)
     {
         if (collision.collider.tag == "Wall")
-        {
             direction = Vector2.Perpendicular(direction);
-        }
     }
 
 }
