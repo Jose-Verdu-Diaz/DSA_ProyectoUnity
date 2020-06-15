@@ -10,10 +10,9 @@ GameObject:
   m_Component:
   - component: {fileID: 1714369048396651136}
   - component: {fileID: 1714369048396651151}
-  - component: {fileID: 1714369048396651150}
   - component: {fileID: 1714369048396651137}
   - component: {fileID: 1714369048396651138}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: FollowingNPC
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -84,21 +83,6 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!114 &1714369048396651150
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1714369048396651149}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: a4a42a919781f43a1a633b850e234fc2, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  player: {fileID: 623348017144644650, guid: 2a4db6746fdc9cd4f8002593a20fb99e, type: 3}
-  moveSpeed: 8
-  empezaSeguir: 5
 --- !u!50 &1714369048396651137
 Rigidbody2D:
   serializedVersion: 4

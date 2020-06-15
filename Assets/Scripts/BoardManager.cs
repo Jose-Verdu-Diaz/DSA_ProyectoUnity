@@ -83,7 +83,7 @@ namespace Completed
 
         public void SetupScene(int level)
         {
-            ParseMapString("Assets/Maps/02.csv");
+            ParseMapString("Assets/Maps/01.csv");
             BoardSetup();
         }
     }
