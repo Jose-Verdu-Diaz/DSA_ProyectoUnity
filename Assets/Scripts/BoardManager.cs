@@ -14,6 +14,7 @@ namespace Completed
         public GameObject[] floorTiles;
         public GameObject[] wallTiles;
         public GameObject wanderingNPC;
+        public GameObject followingNPC;
         public GameObject player;
         public GameObject brocoli;
 
@@ -55,6 +56,9 @@ namespace Completed
                                 break;
                             case "B":
                                 toInstantiate = brocoli;
+                                break;
+                            case "F":
+                                toInstantiate = followingNPC;
                                 break;
                         }
                         GameObject instance = Instantiate(toInstantiate, new Vector3(x, mapMatrix.Length - y, 0f), Quaternion.identity) as GameObject;
