@@ -6,6 +6,7 @@ TagManager:
   tags:
   - Item
   - Wall
+  - Estornudo
   layers:
   - Default
   - TransparentFX

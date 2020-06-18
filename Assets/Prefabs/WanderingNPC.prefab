@@ -161,10 +161,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 250c42a60cb492d4a9a67e0e658f594c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  estornudo: {fileID: 6123055498225231848, guid: 6eba062c0c822064086d80eda534201f,
+  estornudo: {fileID: 6749813424462425113, guid: 3c71ae6af15aecd4fa3bcf888ab1f7d6,
     type: 3}
   enfermo: 1
   probabiliadEstornudo: 8
+  probEnfermo: 100
   cough:
   - {fileID: 1277980660818016173}
   - {fileID: -7189061189563961092}

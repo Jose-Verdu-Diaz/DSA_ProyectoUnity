@@ -9,10 +9,16 @@ public class Player : MonoBehaviour
     protected Joystick joystick;
     Rigidbody2D rigidBody;
 
+    private int hp;
+
+    public GameObject healthBar;
+
     private void Start()
     {
         joystick = FindObjectOfType<Joystick>();
         rigidBody = GetComponent<Rigidbody2D>();
+
+        healthBar = GameObject.Find("Healthbar");
     }
 
     private void Update()
@@ -20,13 +26,17 @@ public class Player : MonoBehaviour
         rigidBody.velocity = new Vector3(joystick.Horizontal * 4f, joystick.Vertical * 4f, 0f);
     }
 
-    private void OnTriggerEnter2D(Collider2D other)
-    {     
-        if (other.tag == "Item")
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+        if (collision.tag == "Item")
         {
-            other.gameObject.SetActive(false);
+            collision.gameObject.SetActive(false);
             ItemPickup.Play();
             Debug.Log("Objeto recogido");
         }
+    }
+    private void OnTriggerStay2D(Collider2D collision)
+    {
+        if (collision.tag=="Estornudo") healthBar.GetComponent<Healthbar>().TakeDamage(1);
     }
 }

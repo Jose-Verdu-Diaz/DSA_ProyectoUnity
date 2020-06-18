@@ -86,6 +86,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   ItemPickup: {fileID: 9117830263175517377}
+  healthBar: {fileID: 4737309065316831898, guid: a25b89a86b8a1a943829ce8fdc66aeeb,
+    type: 3}
 --- !u!82 &9117830263175517377
 AudioSource:
   m_ObjectHideFlags: 0

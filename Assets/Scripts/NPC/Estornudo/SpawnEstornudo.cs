@@ -10,6 +10,7 @@ public class SpawnEstornudo : MonoBehaviour
     private int p;
     private Vector3 offset;
     private int pausaEstornudar;
+    public int probEnfermo;
 
 
     public AudioSource[] cough;
@@ -20,8 +21,8 @@ public class SpawnEstornudo : MonoBehaviour
         pausaEstornudar = 1000;
 
 
-        int probEnfermo = Random.Range(1,100);
-        if (probEnfermo<50)
+        int enfermoRange = Random.Range(1,100);
+        if (enfermoRange < probEnfermo)
         {
             enfermo = true;
         }

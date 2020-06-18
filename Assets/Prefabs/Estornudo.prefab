@@ -1,6 +1,6 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
---- !u!1 &6123055498225231848
+--- !u!1 &672532801156788951
 GameObject:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -8,39 +8,87 @@ GameObject:
   m_PrefabAsset: {fileID: 0}
   serializedVersion: 6
   m_Component:
-  - component: {fileID: 6123055498225231844}
-  - component: {fileID: 6123055498225231850}
-  - component: {fileID: 6123055498225231845}
-  - component: {fileID: 6123055498225231851}
-  - component: {fileID: 6123055498225231847}
+  - component: {fileID: 672532801156788950}
+  - component: {fileID: 672532801156788953}
   m_Layer: 9
-  m_Name: Estornudo
+  m_Name: TriggerEstornudo
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!4 &6123055498225231844
+--- !u!4 &672532801156788950
 Transform:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6123055498225231848}
+  m_GameObject: {fileID: 672532801156788951}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 6749813424462425109}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!58 &672532801156788953
+CircleCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 672532801156788951}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  serializedVersion: 2
+  m_Radius: 1.5
+--- !u!1 &6749813424462425113
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 6749813424462425109}
+  - component: {fileID: 6749813424462425115}
+  - component: {fileID: 6749813424462425108}
+  - component: {fileID: 6749813424462425114}
+  - component: {fileID: 6749813424462425110}
+  m_Layer: 0
+  m_Name: Estornudo
+  m_TagString: Estornudo
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &6749813424462425109
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6749813424462425113}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 6.71, y: 9.81, z: 0}
   m_LocalScale: {x: 0.29899654, y: 0.2819474, z: 0.40681067}
-  m_Children: []
+  m_Children:
+  - {fileID: 672532801156788950}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!212 &6123055498225231850
+--- !u!212 &6749813424462425115
 SpriteRenderer:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6123055498225231848}
+  m_GameObject: {fileID: 6749813424462425113}
   m_Enabled: 1
   m_CastShadows: 0
   m_ReceiveShadows: 0
@@ -84,14 +132,14 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!50 &6123055498225231845
+--- !u!50 &6749813424462425108
 Rigidbody2D:
   serializedVersion: 4
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6123055498225231848}
+  m_GameObject: {fileID: 6749813424462425113}
   m_BodyType: 0
   m_Simulated: 1
   m_UseFullKinematicContacts: 0
@@ -105,29 +153,29 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 0
---- !u!58 &6123055498225231851
+--- !u!58 &6749813424462425114
 CircleCollider2D:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6123055498225231848}
+  m_GameObject: {fileID: 6749813424462425113}
   m_Enabled: 1
   m_Density: 1
   m_Material: {fileID: 0}
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: 0}
   serializedVersion: 2
   m_Radius: 1.5
---- !u!114 &6123055498225231847
+--- !u!114 &6749813424462425110
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6123055498225231848}
+  m_GameObject: {fileID: 6749813424462425113}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 57782939f6af0a148a4920f0bbf94b57, type: 3}
@@ -135,7 +183,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   frequency: 0.5
   rotation: 0.15
-  destroyTime: 1
+  destroyTime: 5
   sprites:
   - {fileID: 21300000, guid: c2ddebf6d67c0cc408a325ddd1f7a07e, type: 3}
   - {fileID: 21300000, guid: d9225a584d829cc4fa7a4b6046f85edb, type: 3}
