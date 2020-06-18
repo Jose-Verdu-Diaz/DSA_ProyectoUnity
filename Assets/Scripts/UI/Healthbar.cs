@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using UnityEngine;
 using UnityEngine.UI;
+using TMPro;
 
 // Only allow this script to be attached to the object with the healthbar slider:
 [RequireComponent(typeof(Slider))]
@@ -8,8 +9,7 @@ public class Healthbar : MonoBehaviour {
 
     // Visible health bar ui:
     private Slider healthbarDisplay;
-
-    public Text healthbarText;
+    public TextMeshProUGUI healthbarText;
 
     [Header("Main Variables:")]
     // Health variable: (default range: 0-100)
