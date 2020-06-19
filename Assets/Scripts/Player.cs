@@ -12,7 +12,10 @@ public class Player : MonoBehaviour
     private int hp;
 
     public GameObject healthBar;
-    public GameObject points;
+
+    //Conteo Puntos
+    public GameObject pointsDisplay;
+    private int points;
 
     private void Start()
     {
@@ -20,7 +23,10 @@ public class Player : MonoBehaviour
         rigidBody = GetComponent<Rigidbody2D>();
 
         healthBar = GameObject.Find("Healthbar");
-        points = GameObject.Find("Points");
+
+        //Conteo Puntos
+        pointsDisplay = GameObject.Find("Points");
+        points = 0;
     }
 
     private void Update()
@@ -34,7 +40,9 @@ public class Player : MonoBehaviour
         {
             collision.gameObject.SetActive(false);
             ItemPickup.Play();
-            points.GetComponent<Points>().addPoints(100);
+            int valor = collision.gameObject.GetComponent<Item>().getValor();
+            pointsDisplay.GetComponent<Points>().addPoints(valor);
+            points += valor;
         }
     }
     private void OnTriggerStay2D(Collider2D collision)

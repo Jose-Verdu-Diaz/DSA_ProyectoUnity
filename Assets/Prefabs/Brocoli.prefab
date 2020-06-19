@@ -10,8 +10,8 @@ GameObject:
   m_Component:
   - component: {fileID: 6284422737514173213}
   - component: {fileID: 6284422737514173214}
-  - component: {fileID: 6284422737514173215}
   - component: {fileID: 6284422737514173212}
+  - component: {fileID: -7545933888506369474}
   m_Layer: 0
   m_Name: Brocoli
   m_TagString: Item
@@ -83,20 +83,6 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!114 &6284422737514173215
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6284422737514173200}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 311ddcb2e4ec5b841a2084b7ee620f05, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  amplitude: 0.2
-  frequency: 0.7
 --- !u!58 &6284422737514173212
 CircleCollider2D:
   m_ObjectHideFlags: 0
@@ -113,3 +99,19 @@ CircleCollider2D:
   m_Offset: {x: 0, y: 0}
   serializedVersion: 2
   m_Radius: 0.25
+--- !u!114 &-7545933888506369474
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6284422737514173200}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2f88574729b260243bd565254cab1063, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  nombre: Brocoli
+  valor: 100
+  amplitude: 0.2
+  frequency: 0.7
