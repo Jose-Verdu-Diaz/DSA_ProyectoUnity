@@ -5,12 +5,15 @@ using UnityEngine;
 public class SpawnEstornudo : MonoBehaviour
 {
     public GameObject estornudo;
+
     public bool enfermo = true;
-    public int probabiliadEstornudo;
-    private int p;
+
+
     private Vector3 offset;
-    private int pausaEstornudar;
+    private float pausaEstornudar;
     public int probEnfermo;
+
+    private GameObject pausa;
 
 
     public AudioSource[] cough;
@@ -18,7 +21,9 @@ public class SpawnEstornudo : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        pausaEstornudar = 1000;
+        pausa = GameObject.Find("ButtonPausa");
+
+        pausaEstornudar = Random.Range(1f, 4f); ;
 
 
         int enfermoRange = Random.Range(1,100);
@@ -35,33 +40,29 @@ public class SpawnEstornudo : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (enfermo)
+        if (!pausa.GetComponent<PauseMenu>().isPaused && enfermo)
         {
-            if (pausaEstornudar==0)
+            if (pausaEstornudar<=0)
             {
-                p = Random.Range(0,10000);
-                if (p <= probabiliadEstornudo)
-                {
-                    cough[Random.Range(0, cough.Length)].Play();
+                cough[Random.Range(0, cough.Length)].Play();
 
-                    offset = transform.position;
-                    Instantiate(estornudo, offset, Quaternion.identity);
-                    offset.x = offset.x + 0.1f;
-                    Instantiate(estornudo, offset, Quaternion.identity);
-                    offset.x = offset.x - 0.2f;
-                    Instantiate(estornudo, offset, Quaternion.identity);
-                    offset.x = offset.x + 0.1f;
-                    offset.y = offset.y + 0.1f;
-                    Instantiate(estornudo, offset, Quaternion.identity);
-                    offset.y = offset.y - 0.2f;
-                    Instantiate(estornudo, offset, Quaternion.identity);
+                offset = transform.position;
+                Instantiate(estornudo, offset, Quaternion.identity);
+                offset.x = offset.x + 0.1f;
+                Instantiate(estornudo, offset, Quaternion.identity);
+                offset.x = offset.x - 0.2f;
+                Instantiate(estornudo, offset, Quaternion.identity);
+                offset.x = offset.x + 0.1f;
+                offset.y = offset.y + 0.1f;
+                Instantiate(estornudo, offset, Quaternion.identity);
+                offset.y = offset.y - 0.2f;
+                Instantiate(estornudo, offset, Quaternion.identity);
 
-                    pausaEstornudar = 1000;
-                }
+                pausaEstornudar = Random.Range(6f, 9f);
             }
             else
             {
-                pausaEstornudar--;
+                pausaEstornudar-= Time.deltaTime;
             }
         }        
     }
