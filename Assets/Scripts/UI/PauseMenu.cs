@@ -2,13 +2,24 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using UnityEngine.UI;
+using TMPro;
+
 public class PauseMenu : MonoBehaviour{
 
     public bool isPaused;
 
+    private GameObject canvas;
+    public TextMeshProUGUI pauseText;
+
     private void Start()
     {
         isPaused = false;
+        canvas = GameObject.Find("Canvas");
+
+        var tmpColor = pauseText.color;
+        tmpColor.a = 0f;
+        pauseText.color = tmpColor;
     }
 
     public void pauseClick()
@@ -17,11 +28,27 @@ public class PauseMenu : MonoBehaviour{
         {
             isPaused = true;
             Time.timeScale = 0;
+
+            var tmpColor = canvas.GetComponent<Image>().color;
+            tmpColor.a = 0.3f;
+            canvas.GetComponent<Image>().color = tmpColor;
+
+            tmpColor = pauseText.color;
+            tmpColor.a = 1f;
+            pauseText.color = tmpColor;
         }
         else
         {
             isPaused = false;
             Time.timeScale = 1;
+
+            var tmpColor = canvas.GetComponent<Image>().color;
+            tmpColor.a = 0f;
+            canvas.GetComponent<Image>().color = tmpColor;
+
+            tmpColor = pauseText.color;
+            tmpColor.a = 0f;
+            pauseText.color = tmpColor;
         }
     }
 }
