@@ -12,6 +12,7 @@ public class Player : MonoBehaviour
     private int hp;
 
     public GameObject healthBar;
+    public GameObject points;
 
     private void Start()
     {
@@ -19,6 +20,7 @@ public class Player : MonoBehaviour
         rigidBody = GetComponent<Rigidbody2D>();
 
         healthBar = GameObject.Find("Healthbar");
+        points = GameObject.Find("Points");
     }
 
     private void Update()
@@ -32,7 +34,7 @@ public class Player : MonoBehaviour
         {
             collision.gameObject.SetActive(false);
             ItemPickup.Play();
-            Debug.Log("Objeto recogido");
+            points.GetComponent<Points>().addPoints(100);
         }
     }
     private void OnTriggerStay2D(Collider2D collision)
