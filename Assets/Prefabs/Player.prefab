@@ -72,7 +72,7 @@ CircleCollider2D:
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: 0}
   serializedVersion: 2
-  m_Radius: 0.5
+  m_Radius: 0.4
 --- !u!114 &7359393567417983916
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -88,6 +88,7 @@ MonoBehaviour:
   ItemPickup: {fileID: 9117830263175517377}
   healthBar: {fileID: 4737309065316831898, guid: a25b89a86b8a1a943829ce8fdc66aeeb,
     type: 3}
+  pointsDisplay: {fileID: 0}
 --- !u!82 &9117830263175517377
 AudioSource:
   m_ObjectHideFlags: 0

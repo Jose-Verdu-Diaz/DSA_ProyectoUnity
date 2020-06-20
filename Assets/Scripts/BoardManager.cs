@@ -16,7 +16,12 @@ namespace Completed
         public GameObject wanderingNPC;
         public GameObject followingNPC;
         public GameObject player;
+
+        [Header("Items:")]
         public GameObject brocoli;
+        public GameObject papel;
+        public GameObject agua;
+        public GameObject desinfectante;
 
         public string[][] mapMatrix;
 
@@ -54,11 +59,22 @@ namespace Completed
                             case "W":
                                 toInstantiate = wanderingNPC;
                                 break;
+                            case "F":
+                                toInstantiate = followingNPC;
+                                break;
                             case "B":
                                 toInstantiate = brocoli;
                                 break;
-                            case "F":
-                                toInstantiate = followingNPC;
+                            case "V":
+                                toInstantiate = papel;
+                                break;
+                            case "A":
+                                toInstantiate = agua;
+                                break;
+                            case "D":
+                                toInstantiate = desinfectante;
+                                break;
+                            default:
                                 break;
                         }
                         GameObject instance = Instantiate(toInstantiate, new Vector3(x, mapMatrix.Length - y, 0f), Quaternion.identity) as GameObject;
