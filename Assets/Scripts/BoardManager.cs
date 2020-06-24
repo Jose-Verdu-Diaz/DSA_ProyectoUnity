@@ -1,4 +1,5 @@
 ﻿using UnityEngine;
+using UnityEngine.UI;
 using System;
 using System.Collections.Generic;         //Allows us to use Lists.
 using Random = UnityEngine.Random;         //Tells Random to use the Unity Engine random number generator.
@@ -26,6 +27,9 @@ namespace Completed
         public string[][] mapMatrix;
 
         private Transform boardHolder;
+
+        [Header("Mapas:")]
+        public GameObject[] maps;
 
 
         void BoardSetup()
@@ -84,17 +88,16 @@ namespace Completed
             }
         }
 
-        void ParseMapString(string filePath)//habrá que adaptarlo, de momento pilla un csv y lo parsea. En el futuro tiene que recibir el string de la BBDD
+        void ParseMapString(string s)//habrá que adaptarlo, de momento pilla un csv y lo parsea. En el futuro tiene que recibir el string de la BBDD
         {
-            StreamReader sr = new StreamReader(filePath);
             var lines = new List<string[]>();
-            int Row = 0;
-            while (!sr.EndOfStream)
+
+            string[] row = s.Split(';');
+
+            foreach (string r in row)
             {
-                string[] Line = sr.ReadLine().Split(',');
+                string[] Line = r.Split(',');
                 lines.Add(Line);
-                Row++;
-                Console.WriteLine(Row);
             }
 
             this.mapMatrix = lines.ToArray();
@@ -103,7 +106,7 @@ namespace Completed
 
         public void SetupScene(int level)
         {
-            ParseMapString("Assets/Maps/02.csv");
+            ParseMapString(maps[0].GetComponent<Text>().text);
             BoardSetup();
         }
     }

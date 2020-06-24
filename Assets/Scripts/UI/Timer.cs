@@ -1,12 +1,12 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using TMPro;
+using UnityEngine.UI;
 
 public class Timer : MonoBehaviour
 {
     private float time;
-    public TextMeshProUGUI timeDisplay;
+    public Text timeDisplay;
 
     // Start is called before the first frame update
     void Start()
@@ -20,4 +20,6 @@ public class Timer : MonoBehaviour
         time += Time.deltaTime;
         timeDisplay.text = time.ToString("n1") + " s";
     }
+
+    public float getTime() { return this.time; }
 }

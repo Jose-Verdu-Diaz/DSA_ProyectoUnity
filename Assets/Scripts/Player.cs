@@ -16,6 +16,9 @@ public class Player : MonoBehaviour
     //Conteo Puntos
     public GameObject pointsDisplay;
     private int points;
+    private int numObjects;
+
+    public PauseMenu pauseScript;
 
     private void Start()
     {
@@ -26,7 +29,10 @@ public class Player : MonoBehaviour
 
         //Conteo Puntos
         pointsDisplay = GameObject.Find("Points");
-        points = 0;
+        this.points = 0;
+        this.numObjects = 0;
+
+        pauseScript = GameObject.Find("ButtonPausa").GetComponent<PauseMenu>();
     }
 
     private void Update()
@@ -42,11 +48,19 @@ public class Player : MonoBehaviour
             ItemPickup.Play();
             int valor = collision.gameObject.GetComponent<Item>().getValor();
             pointsDisplay.GetComponent<Points>().addPoints(valor);
-            points += valor;
+            this.points += valor;
+            this.numObjects++;
+        }
+        else if (collision.tag == "Exit" && points > 0)
+        {
+            pauseScript.finalizar();
         }
     }
     private void OnTriggerStay2D(Collider2D collision)
     {
         if (collision.tag=="Estornudo") healthBar.GetComponent<Healthbar>().TakeDamage(1);
     }
+
+    public int getPoints() { return this.points; }
+    public int getNumObjects() { return this.numObjects; }
 }
