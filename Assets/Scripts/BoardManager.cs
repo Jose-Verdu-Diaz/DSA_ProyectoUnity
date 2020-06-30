@@ -58,10 +58,10 @@ namespace Completed
                                 toInstantiate = (levelNumber % 5 == 0) ? wallTilesR[Random.Range(0, wallTilesR.Length)] : (levelNumber % 2 == 0) ? wallTilesW[Random.Range(0, wallTilesW.Length)] : wallTilesB[Random.Range(0, wallTilesB.Length)];
                                 break;
                             case "P":
-                                toInstantiate = (levelNumber % 2 == 0) ? wallTilesW[Random.Range(0, wallTilesW.Length)] : wallTilesB[Random.Range(0, wallTilesB.Length)];
+                                toInstantiate = (levelNumber % 5 == 0) ? wallTilesR[Random.Range(0, wallTilesR.Length)] : (levelNumber % 2 == 0) ? wallTilesW[Random.Range(0, wallTilesW.Length)] : wallTilesB[Random.Range(0, wallTilesB.Length)];
                                 break;
                             case "E":
-                                toInstantiate = (levelNumber % 2 == 0) ? wallTilesW[Random.Range(0, wallTilesW.Length)] : wallTilesB[Random.Range(0, wallTilesB.Length)];
+                                toInstantiate = (levelNumber % 2 == 0) ? exitW : exitB;
                                 break;
                             case "C":
                                 toInstantiate = player;
