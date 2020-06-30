@@ -48,7 +48,6 @@ SpriteRenderer:
   m_MotionVectors: 1
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
-  m_RayTracingMode: 0
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
@@ -60,7 +59,6 @@ SpriteRenderer:
   m_ProbeAnchor: {fileID: 0}
   m_LightProbeVolumeOverride: {fileID: 0}
   m_ScaleInLightmap: 1
-  m_ReceiveGI: 1
   m_PreserveUVs: 0
   m_IgnoreNormalsForChartDetection: 0
   m_ImportantGI: 0
@@ -70,15 +68,15 @@ SpriteRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 489291445
+  m_SortingLayerID: -1000171999
   m_SortingLayer: 3
   m_SortingOrder: 1
-  m_Sprite: {fileID: 21300000, guid: 4c6eed053005441869e5beb41712648d, type: 3}
+  m_Sprite: {fileID: 21300000, guid: e13b727a0f465cb45b4535e27e0465ae, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
-  m_Size: {x: 0.5, y: 0.5}
+  m_Size: {x: 0.32, y: 0.32}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1
@@ -123,7 +121,7 @@ BoxCollider2D:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
     oldSize: {x: 1, y: 1}
-    newSize: {x: 0.5, y: 0.5}
+    newSize: {x: 0.32, y: 0.32}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
     adaptiveTiling: 0
@@ -140,9 +138,9 @@ MonoBehaviour:
   m_GameObject: {fileID: 1714369048396651149}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c305c439ff8ff3944b4c2620ecc7fa79, type: 3}
+  m_Script: {fileID: 11500000, guid: b4b6b77eba783f241be9ba3ebfe44def, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  player: {fileID: 3394081405731275930, guid: 2a4db6746fdc9cd4f8002593a20fb99e, type: 3}
-  maxDistance: 8
+  player: {fileID: 3394081405731275930, guid: f7bc19fa51ba3b64b86604743e7c5f43, type: 3}
+  maxDistance: 10
   moveSpeed: 5

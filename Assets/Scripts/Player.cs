@@ -13,6 +13,8 @@ public class Player : MonoBehaviour
 
     public GameObject healthBar;
 
+    public GameObject gameManager;
+
     //Conteo Puntos
     public GameObject pointsDisplay;
     private int points;
@@ -32,7 +34,7 @@ public class Player : MonoBehaviour
         this.points = 0;
         this.numObjects = 0;
 
-        pauseScript = GameObject.Find("ButtonPausa").GetComponent<PauseMenu>();
+        //pauseScript = GameObject.Find("ButtonPausa").GetComponent<PauseMenu>();
     }
 
     private void Update()
@@ -53,12 +55,15 @@ public class Player : MonoBehaviour
         }
         else if (collision.tag == "Exit" && points > 0)
         {
-            pauseScript.finalizar();
+            //pauseScript.finalizar();
+            //Debug.Log(points.ToString() + " pts. + (1 + " + numObjects.ToString() + " / " + time.ToString("n1") + " ) = " + totalPoints.ToString() + " pts.");
+
+            GameObject.Find("GameManager").GetComponent<GameManager>().finalizarPartida();
         }
     }
     private void OnTriggerStay2D(Collider2D collision)
     {
-        if (collision.tag=="Estornudo") healthBar.GetComponent<Healthbar>().TakeDamage(1);
+        if (collision.tag == "Estornudo") healthBar.GetComponent<Healthbar>().TakeDamage(1);
     }
 
     public int getPoints() { return this.points; }

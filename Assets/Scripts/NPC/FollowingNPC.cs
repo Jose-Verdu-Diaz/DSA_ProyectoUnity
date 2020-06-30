@@ -28,7 +28,7 @@ public class FollowingNPC : MonoBehaviour
     {
         heading = GameObject.FindGameObjectWithTag("Player").transform.position - transform.position;
         RaycastHit2D hit = Physics2D.Raycast(transform.position, heading.normalized, maxDistance);
-       
+
         if (hit.collider != null && hit.transform == GameObject.FindGameObjectWithTag("Player").transform) rb.velocity = heading.normalized * 3.2f;
 
         else

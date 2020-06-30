@@ -10,7 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 3878285606535399670}
   - component: {fileID: 8951374389595001016}
-  - component: {fileID: 1270953684700636510}
+  - component: {fileID: 7026369793713852721}
   m_Layer: 0
   m_Name: Mapa01
   m_TagString: Untagged
@@ -45,7 +45,7 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1174579557209151723}
   m_CullTransparentMesh: 0
---- !u!114 &1270953684700636510
+--- !u!114 &7026369793713852721
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -54,14 +54,12 @@ MonoBehaviour:
   m_GameObject: {fileID: 1174579557209151723}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 5f7201a12d95ffc409449d95f23cf332, type: 3}
+  m_Script: {fileID: 708705254, guid: f70555f144d8491a825f0804e09c671c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_RaycastTarget: 1
-  m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
-  m_Maskable: 1
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
@@ -78,6 +76,4 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: 'X,X,X,X,X,X,X,X,X,X,X,X,X,X,X,X,X,X,X,X,X,X,X,X,X,X,X,X,X,X,X,X,X,X;X,E.C,O,O,O,O,O,O,O.B,O,O,O,P,O.D,O,O,O,O,O,O,O,O,O,O,O,O,O,O,O,O,O,O,O,X;X,O,O,O,O,O,O,O,O,O,O,O,P,O,O,O,O,O,O,O,O,O.W,O,O,O,O,O,O,O,O,O,O,O,X;X,O,O,O,O,O,O,O,O,O,O,O,O,O,O,P,O,O,O,O,O,O,O,O,O,O,O,O,O,O,O,O,O,X;X,O,O,O,P,O,O.W,O,O,O,O,O,O,O,O,P,P,P,P,P,P,P,P,O,O,P,P,P,P,P,O,O,O,X;X,O,O,O,P,O,O,O,P,P,P,O,O.B,O,O,P,O.A,O,O,O,O,O,O,O,O,O,O,O,O,O,O,O,O,X;X,O,O,O,P,O,O,O,O,O,P,O,O,O,O,P,O,O,O,O,O,O,O,O,O,O.W,O,O,O,O,O,O,O,X;X,O,O,O,P,O,O,O,O,O,P,O,O,O,O,P,O,O,O,O,O,O,O,O,O,O,O,O,O,O,O,O,O,X;X,O,O,O,P,P,O,O,O,O,P,O,O,O.W,O,P,O,O,P,P,P,P,P,O,O,P,P,P,P,P,O,O,O,X;X,O,O,O,O,O,O,O,O,O,P,O,O,O,O,P,O,O,O,O,O,O,O,O,O,O,O,O,O,O,O,O,O,X;X,O,O.W,O,O,O,O,O,O,O,P,O,O,O,O,P,O,O,O,O,O,O.W,O,O,O,O,O,O,O,O,O,O,O,X;X,O,O,O,P,P,P,P,P,P,P,P,O,O,O,P,O,O,O,O,O,O,O,O,O,O,O,O,O,O,O,O,O,X;X,O,O,O,O,O,O,O,O,O,O,O,O,O,O,P,O,O,P,P,P,P,P,O,O,P,P,P,P,P,O,O,O,X;X,O,O,O,O,O,O,O,O,O,O,O,O,O,O,P,O,O,O,O,O,O,P,O,O,O,O,O,O,O,O,O,O,X;X,O,O,O,O,O,O,O,O,O,P,O,O,O,O,P,O,O,O,O,O,O,P,O,O,O,O,O,O,O.W,O,O,O,X;X,O,O,P,P,P,P,O,O,O,P,O,O,O,O.W,O,O,O,O,O,O,O,O,O,O,O,O,P,O,O,O,O,O,X;X,O,O,O,O.B,P,O,O,O.W,O,P,O,O,O,O,O,O,O,O,O,O,O,O,O,O,O,O,P,O,O,O,O,O,X;X,O,O,O,O,P,O,O,O,O,P,P,P,P,P,P,P,P,P,P,P,P,P,P,P,P,P,P,P,O,O,O,O,X;X,O.W,O,O,O,P,O,O,O,O,P,O,O,O,O,O,O,O,O,O,O,O,O,O,O,O,O,O,O,O,O,O,O,X;X,O,O,O,O,P,O,O,O,O,P,O,O,O,O.W,O,O,O,O,O,O,O,O,O,O,O,O,O,O,O,O,O,O,X;X,O,O,O,O,P,O,O,O,O,O,O,O,O,O,O,O,O,O,P,P,P,P,P,O,O,O,P,O,O,O,O,O,X;X,P,P,O,O,P,O,O,O,O,O,O,O,O,O,P,P,P,P,P,O,O,O,P,O,O,O,P,O,O,O,O,O,X;X,O.V,P,O,O,P,O,O,O,O,O,O,O,O,O,O,O,O,O,O,O,O,O,P,O,O,O,P,P,O,O,O,P,X;X,O,O,O,O,P,O,O,P,O,O,O,O,O,O,O,O,O,O,O,O,O,O,P,O,O,O.F,P,O.W,O,O,O,O,X;X,O,O,O,O,O,O,O,P,P,P,P,O,O,O,P,P,P,P,P,P,O,O,P,O,O,O,P,O,O,O,O,O,X;X,P,P,O,O.W,O,O,O,P,O,O,O,O,O,O,O,O,O,O,O,O,O,O,P,O,O,O,P,P,P,P,O,O,X;X,O,O,O,O,O,O,O,P,O,O,O,O,O,O,O,O,O,O,O.W,O,O,O,P,O,O,O,P,O,O,O,O,O,X;X,O,O,O,O,O,O,O,P,O,O,O,O,O,O,O,O,O,O,O,O,O,O,P,O.A,O,O,P,O,O,O,O,O,X;X,X,X,X,X,X,X,X,X,X,X,X,X,X,X,X,X,X,X,X,X,X,X,X,X,X,X,X,X,X,X,X,X,X
-
-'
+  m_Text: X,X,X,X,X,X,X,X,X,X,X,X,X,X,X,X,X,X,X,X,X,X,X,X,X,X,X,X,X,X,X,X,X,X;X,E.C,O,O,O,O,O,O,O.B,O,O,O,P,O.D,O,O,O,O,O,O,O,O,O,O,O,O,O,O,O,O,O,O,O,X;X,O,O,O,O,O,O,O,O,O,O,O,P,O,O,O,O,O,O,O,O,O.W,O,O,O,O,O,O,O,O,O,O,O,X;X,O,O,O,O,O,O,O,O,O,O,O,O,O,O,P,O,O,O,O,O,O,O,O,O,O,O,O,O,O,O,O,O,X;X,O,O,O,P,O,O.W,O,O,O,O,O,O,O,O,P,P,P,P,P,P,P,P,O,O,P,P,P,P,P,O,O,O,X;X,O,O,O,P,O,O,O,P,P,P,O,O.B,O,O,P,O.A,O,O,O,O,O,O,O,O,O,O,O,O,O,O,O,O,X;X,O,O,O,P,O,O,O,O,O,P,O,O,O,O,P,O,O,O,O,O,O,O,O,O,O.W,O,O,O,O,O,O,O,X;X,O,O,O,P,O,O,O,O,O,P,O,O,O,O,P,O,O,O,O,O,O,O,O,O,O,O,O,O,O,O,O,O,X;X,O,O,O,P,P,O,O,O,O,P,O,O,O.W,O,P,O,O,P,P,P,P,P,O,O,P,P,P,P,P,O,O,O,X;X,O,O,O,O,O,O,O,O,O,P,O,O,O,O,P,O,O,O,O,O,O,O,O,O,O,O,O,O,O,O,O,O,X;X,O,O.W,O,O,O,O,O,O,O,P,O,O,O,O,P,O,O,O,O,O,O.W,O,O,O,O,O,O,O,O,O,O,O,X;X,O,O,O,P,P,P,P,P,P,P,P,O,O,O,P,O,O,O,O,O,O,O,O,O,O,O,O,O,O,O,O,O,X;X,O,O,O,O,O,O,O,O,O,O,O,O,O,O,P,O,O,P,P,P,P,P,O,O,P,P,P,P,P,O,O,O,X;X,O,O,O,O,O,O,O,O,O,O,O,O,O,O,P,O,O,O,O,O,O,P,O,O,O,O,O,O,O,O,O,O,X;X,O,O,O,O,O,O,O,O,O,P,O,O,O,O,P,O,O,O,O,O,O,P,O,O,O,O,O,O,O.W,O,O,O,X;X,O,O,P,P,P,P,O,O,O,P,O,O,O,O.W,O,O,O,O,O,O,O,O,O,O,O,O,P,O,O,O,O,O,X;X,O,O,O,O.B,P,O,O,O.W,O,P,O,O,O,O,O,O,O,O,O,O,O,O,O,O,O,O,P,O,O,O,O,O,X;X,O,O,O,O,P,O,O,O,O,P,P,P,P,P,P,P,P,P,P,P,P,P,P,P,P,P,P,P,O,O,O,O,X;X,O.W,O,O,O,P,O,O,O,O,P,O,O,O,O,O,O,O,O,O,O,O,O,O,O,O,O,O,O,O,O,O,O,X;X,O,O,O,O,P,O,O,O,O,P,O,O,O,O.W,O,O,O,O,O,O,O,O,O,O,O,O,O,O,O,O,O,O,X;X,O,O,O,O,P,O,O,O,O,O,O,O,O,O,O,O,O,O,P,P,P,P,P,O,O,O,P,O,O,O,O,O,X;X,P,P,O,O,P,O,O,O,O,O,O,O,O,O,P,P,P,P,P,O,O,O,P,O,O,O,P,O,O,O,O,O,X;X,O.V,P,O,O,P,O,O,O,O,O,O,O,O,O,O,O,O,O,O,O,O,O,P,O,O,O,P,P,O,O,O,P,X;X,O,O,O,O,P,O,O,P,O,O,O,O,O,O,O,O,O,O,O,O,O,O,P,O,O,O.F,P,O.W,O,O,O,O,X;X,O,O,O,O,O,O,O,P,P,P,P,O,O,O,P,P,P,P,P,P,O,O,P,O,O,O,P,O,O,O,O,O,X;X,P,P,O,O.W,O,O,O,P,O,O,O,O,O,O,O,O,O,O,O,O,O,O,P,O,O,O,P,P,P,P,O,O,X;X,O,O,O,O,O,O,O,P,O,O,O,O,O,O,O,O,O,O,O.W,O,O,O,P,O,O,O,P,O,O,O,O,O,X;X,O,O,O,O,O,O,O,P,O,O,O,O,O,O,O,O,O,O,O,O,O,O,P,O.A,O,O,P,O,O,O,O,O,X;X,X,X,X,X,X,X,X,X,X,X,X,X,X,X,X,X,X,X,X,X,X,X,X,X,X,X,X,X,X,X,X,X,X

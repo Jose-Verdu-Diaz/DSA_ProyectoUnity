@@ -15,6 +15,6 @@ public class Points : MonoBehaviour
 
     public void addPoints(int points)
     {
-        healthbarText.text = (int.Parse(healthbarText.text.Replace(" pts.","")) + points).ToString() + " pts.";
+        healthbarText.text = (int.Parse(healthbarText.text.Replace(" pts.", "")) + points).ToString() + " pts.";
     }
 }

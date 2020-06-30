@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: 7359393567417983916}
   - component: {fileID: 9117830263175517377}
   - component: {fileID: 1018054383084300922}
-  m_Layer: 10
+  m_Layer: 8
   m_Name: Player
   m_TagString: Player
   m_Icon: {fileID: 0}
@@ -82,13 +82,16 @@ MonoBehaviour:
   m_GameObject: {fileID: 6219910226260531031}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 20a17d0bc3efed247abcc88e33bf2126, type: 3}
+  m_Script: {fileID: 11500000, guid: e8ad05257c1eadf4fbd8c6d582d93db7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   ItemPickup: {fileID: 9117830263175517377}
-  healthBar: {fileID: 4737309065316831898, guid: a25b89a86b8a1a943829ce8fdc66aeeb,
+  healthBar: {fileID: 2986478217456711764, guid: aa57de6874c505442b51d9b728990907,
     type: 3}
-  pointsDisplay: {fileID: 0}
+  pointsDisplay: {fileID: 1822471407090932444, guid: 374e42ae11aaf6d4d9c81e58f4802864,
+    type: 3}
+  pauseScript: {fileID: 4053209952965545943, guid: 160b184783a3d5345aab3daa5c24be78,
+    type: 3}
 --- !u!82 &9117830263175517377
 AudioSource:
   m_ObjectHideFlags: 0
@@ -99,7 +102,7 @@ AudioSource:
   m_Enabled: 1
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
-  m_audioClip: {fileID: 8300000, guid: eaef627ae236b414189aa790dd16827d, type: 3}
+  m_audioClip: {fileID: 8300000, guid: aeef688b8d0d3c34c9a947a314ace351, type: 3}
   m_PlayOnAwake: 0
   m_Volume: 1
   m_Pitch: 1
@@ -199,7 +202,6 @@ SpriteRenderer:
   m_MotionVectors: 1
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
-  m_RayTracingMode: 0
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
@@ -211,7 +213,6 @@ SpriteRenderer:
   m_ProbeAnchor: {fileID: 0}
   m_LightProbeVolumeOverride: {fileID: 0}
   m_ScaleInLightmap: 1
-  m_ReceiveGI: 1
   m_PreserveUVs: 0
   m_IgnoreNormalsForChartDetection: 0
   m_ImportantGI: 0
@@ -221,15 +222,15 @@ SpriteRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 489291445
+  m_SortingLayerID: -1000171999
   m_SortingLayer: 3
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: 03ae05941b14a4a50a19665cfee24296, type: 3}
+  m_Sprite: {fileID: 21300000, guid: fed89704d92bf4b4db970ef2d18e6690, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
-  m_Size: {x: 1, y: 1}
+  m_Size: {x: 0.32, y: 0.32}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1
@@ -246,7 +247,7 @@ GameObject:
   - component: {fileID: 102280771818152636}
   - component: {fileID: 6709713240613288130}
   - component: {fileID: 5779010760970380307}
-  m_Layer: 10
+  m_Layer: 8
   m_Name: Main Camera
   m_TagString: MainCamera
   m_Icon: {fileID: 0}
@@ -279,10 +280,9 @@ Camera:
   m_ClearFlags: 1
   m_BackGroundColor: {r: 0.01886791, g: 0.01886791, b: 0.01886791, a: 0}
   m_projectionMatrixMode: 1
-  m_GateFitMode: 2
-  m_FOVAxisMode: 0
   m_SensorSize: {x: 36, y: 24}
   m_LensShift: {x: 0, y: 0}
+  m_GateFitMode: 2
   m_FocalLength: 50
   m_NormalizedViewPortRect:
     serializedVersion: 2
@@ -294,7 +294,7 @@ Camera:
   far clip plane: 1000
   field of view: 60
   orthographic: 1
-  orthographic size: 5
+  orthographic size: 7
   m_Depth: -1
   m_CullingMask:
     serializedVersion: 2

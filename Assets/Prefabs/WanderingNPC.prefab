@@ -52,7 +52,6 @@ SpriteRenderer:
   m_MotionVectors: 1
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
-  m_RayTracingMode: 0
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
@@ -64,7 +63,6 @@ SpriteRenderer:
   m_ProbeAnchor: {fileID: 0}
   m_LightProbeVolumeOverride: {fileID: 0}
   m_ScaleInLightmap: 1
-  m_ReceiveGI: 1
   m_PreserveUVs: 0
   m_IgnoreNormalsForChartDetection: 0
   m_ImportantGI: 0
@@ -74,16 +72,15 @@ SpriteRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 489291445
+  m_SortingLayerID: -1000171999
   m_SortingLayer: 3
   m_SortingOrder: 1
-  m_Sprite: {fileID: -7221865514770959421, guid: b055e4b60b0017d498474355c28d1e7c,
-    type: 3}
+  m_Sprite: {fileID: 21300000, guid: df514c7efb3d37a40838aab6a197648b, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
-  m_Size: {x: 0.5, y: 0.5}
+  m_Size: {x: 0.64, y: 0.64}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1
@@ -128,7 +125,7 @@ BoxCollider2D:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
     oldSize: {x: 1, y: 1}
-    newSize: {x: 0.5, y: 0.5}
+    newSize: {x: 0.64, y: 0.64}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
     adaptiveTiling: 0
@@ -145,7 +142,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 7056461771069984854}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 3e7d24806f41c0d4aacf56f317e770bc, type: 3}
+  m_Script: {fileID: 11500000, guid: 3a8332836499d8341a16a83d37441595, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   moveSpeed: 5
@@ -158,17 +155,16 @@ MonoBehaviour:
   m_GameObject: {fileID: 7056461771069984854}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 250c42a60cb492d4a9a67e0e658f594c, type: 3}
+  m_Script: {fileID: 11500000, guid: c2a34e4835242e141b7675abde311613, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  estornudo: {fileID: 6749813424462425113, guid: 3c71ae6af15aecd4fa3bcf888ab1f7d6,
+  estornudo: {fileID: 6749813424462425113, guid: 7d4ebc6452fb07040939b8020ea9a832,
     type: 3}
   enfermo: 1
-  probabiliadEstornudo: 8
   probEnfermo: 100
   cough:
   - {fileID: 1277980660818016173}
-  - {fileID: -7189061189563961092}
+  - {fileID: 1277980660818016173}
   - {fileID: 1095711822869893885}
 --- !u!82 &1277980660818016173
 AudioSource:
@@ -180,7 +176,7 @@ AudioSource:
   m_Enabled: 1
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
-  m_audioClip: {fileID: 8300000, guid: 351600dcc89dc3845b97a86d8dee9965, type: 3}
+  m_audioClip: {fileID: 8300000, guid: fec06cd914b035344a7d3479b969e47b, type: 3}
   m_PlayOnAwake: 0
   m_Volume: 1
   m_Pitch: 1
@@ -303,7 +299,7 @@ AudioSource:
   m_Enabled: 1
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
-  m_audioClip: {fileID: 8300000, guid: ed531ca73db70db49b35cd2063ef6c57, type: 3}
+  m_audioClip: {fileID: 8300000, guid: f27bbdfb87db0b9438af9265860c6504, type: 3}
   m_PlayOnAwake: 0
   m_Volume: 1
   m_Pitch: 1
@@ -426,7 +422,7 @@ AudioSource:
   m_Enabled: 1
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
-  m_audioClip: {fileID: 8300000, guid: cb9086ba386316344aa0819985c55f04, type: 3}
+  m_audioClip: {fileID: 8300000, guid: ae3703ec08eaf8845a8dd3e6b35a53f9, type: 3}
   m_PlayOnAwake: 0
   m_Volume: 1
   m_Pitch: 1

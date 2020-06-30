@@ -8,11 +8,31 @@ public class GameManager : MonoBehaviour
 
     public static GameManager instance = null;                //Static instance of GameManager which allows it to be accessed by any other script.
     private BoardManager boardScript;                        //Store a reference to our BoardManager which will set up the level.
-    private int level = 1;                                    //Current level number, expressed in game as "Day 1".
+
+    private string stringNivel;
+    private int levelNumber;
+
+    private AndroidJavaObject currentActivity;
 
     //Awake is always called before any Start functions
     void Awake()
     {
+        stringNivel = "X,X,X,X,X;X,E.C,,O.B,X;X,X,X,X,X";
+
+        if (Application.platform == RuntimePlatform.Android)
+        {
+            AndroidJavaClass UnityPlayer = new AndroidJavaClass("com.unity3d.player.UnityPlayer");
+            currentActivity = UnityPlayer.GetStatic<AndroidJavaObject>("currentActivity");
+            AndroidJavaObject intent = currentActivity.Call<AndroidJavaObject>("getIntent");
+            bool hasExtra = intent.Call<bool>("hasExtra", "arguments");
+            if (hasExtra)
+            {
+                AndroidJavaObject extras = intent.Call<AndroidJavaObject>("getExtras");
+                stringNivel = extras.Call<string>("getString", "arguments");
+                levelNumber = extras.Call<int>("getInt", "levelNumber");
+            }
+        }
+
         //Check if instance already exists
         if (instance == null)
             //if not, set instance to this
@@ -37,15 +57,17 @@ public class GameManager : MonoBehaviour
     void InitGame()
     {
         //Call the SetupScene function of the BoardManager script, pass it current level number.
-        boardScript.SetupScene(level);
+        boardScript.SetupScene(stringNivel, levelNumber);
 
     }
 
-
-
-    //Update is called every frame.
-    void Update()
+    public void finalizarPartida()
     {
-
+        int score = 400;
+        int time = 30;
+        string mask = "FALSE";
+        levelNumber = 1;
+        string completed = "TRUE";
+        currentActivity.Call("onGameFinish", score, time, mask, levelNumber, completed);
     }
 }

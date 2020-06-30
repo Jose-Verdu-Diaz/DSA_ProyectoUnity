@@ -26,7 +26,7 @@ public class SpawnEstornudo : MonoBehaviour
         pausaEstornudar = Random.Range(1f, 4f); ;
 
 
-        int enfermoRange = Random.Range(1,100);
+        int enfermoRange = Random.Range(1, 100);
         if (enfermoRange < probEnfermo)
         {
             enfermo = true;
@@ -42,7 +42,7 @@ public class SpawnEstornudo : MonoBehaviour
     {
         if (!pausa.GetComponent<PauseMenu>().isPaused && enfermo)
         {
-            if (pausaEstornudar<=0)
+            if (pausaEstornudar <= 0)
             {
                 cough[Random.Range(0, cough.Length)].Play();
 
@@ -62,8 +62,8 @@ public class SpawnEstornudo : MonoBehaviour
             }
             else
             {
-                pausaEstornudar-= Time.deltaTime;
+                pausaEstornudar -= Time.deltaTime;
             }
-        }        
+        }
     }
 }

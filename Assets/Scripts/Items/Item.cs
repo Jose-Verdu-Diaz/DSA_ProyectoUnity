@@ -4,7 +4,6 @@ using UnityEngine;
 
 public class Item : MonoBehaviour
 {
-
     [Header("Variables principales:")]
     public string nombre;
     public int valor;
@@ -13,7 +12,7 @@ public class Item : MonoBehaviour
 
     [Header("Efecto flotación:")]
 
-    [Tooltip("Altura máxima del efecto (recomendado 0.2)")]  public float amplitude = 0.2f;
+    [Tooltip("Altura máxima del efecto (recomendado 0.2)")] public float amplitude = 0.2f;
     [Tooltip("Frecuencia del efecto (recomendado 0.7)")] public float frequency = 0.7f;
     private Vector3 posOffset = new Vector3();
     private Vector3 tempPos = new Vector3();

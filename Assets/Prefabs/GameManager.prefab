@@ -41,17 +41,9 @@ MonoBehaviour:
   m_GameObject: {fileID: 8731553285201911545}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 44faedc8adbc66d4caeb86966a857f14, type: 3}
+  m_Script: {fileID: 11500000, guid: 651f3d6a8dbdd6c4fadbdefdde3b1a0e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  exit: {fileID: 6922968167664002933, guid: 83e5d68c099e04720a3919e06fef55a6, type: 3}
-  floorTiles:
-  - {fileID: 354924966677843303, guid: 2abd513b2830043b98f12b2efc76bd86, type: 3}
-  - {fileID: 354924966677843303, guid: 2abd513b2830043b98f12b2efc76bd86, type: 3}
-  - {fileID: 6857742280577866799, guid: e3678b455c8da4075bb3c23fe006400c, type: 3}
-  - {fileID: 5460970457411227002, guid: df573bda6980f42999beaeb6273dce20, type: 3}
-  wallTiles:
-  - {fileID: 9036177994413589298, guid: 2f7e6c17301b54231994b58f0052c727, type: 3}
 --- !u!114 &8731553285201911544
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -61,6 +53,34 @@ MonoBehaviour:
   m_GameObject: {fileID: 8731553285201911545}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ea99631e55918474dbc88a0d2a19881c, type: 3}
+  m_Script: {fileID: 11500000, guid: f79a409be911d6344a41778d6c859e2d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  exitB: {fileID: 6922968167664002933, guid: 4226c30938355954a838998e9316ae2d, type: 3}
+  floorTilesB:
+  - {fileID: 354924966677843303, guid: f0b7190b0df8e8f4a86db83012b71597, type: 3}
+  - {fileID: 6857742280577866799, guid: 7424d6503e61dce4291a99ded3d6cb73, type: 3}
+  - {fileID: 5460970457411227002, guid: 05a45e1341c0ac04c8e3a798f3db6806, type: 3}
+  - {fileID: 354924966677843303, guid: f0b7190b0df8e8f4a86db83012b71597, type: 3}
+  wallTilesB:
+  - {fileID: 9036177994413589298, guid: 3f7e6a99d3645a84ab0fc0bcae927366, type: 3}
+  exitW: {fileID: 1793220387091417010, guid: 17d610c19c2dc994685f3c0220086eb9, type: 3}
+  floorTilesW:
+  - {fileID: 4542303557343182237, guid: 79e460afb6dca3847a968edd0c22eba7, type: 3}
+  - {fileID: 700136552812875272, guid: d904c466a880fcc44bb2a8be23fd8383, type: 3}
+  - {fileID: 7383209262232204713, guid: 1a0b6f2bf8f6ec44aae7378f70c812d8, type: 3}
+  - {fileID: 4542303557343182237, guid: 79e460afb6dca3847a968edd0c22eba7, type: 3}
+  wallTilesW:
+  - {fileID: 1040249243382205707, guid: 6d753d7bd7661cf47b8acb5db5ac71ef, type: 3}
+  wallTilesR:
+  - {fileID: 9141277439619375905, guid: e16667abd8cf7ec4885b1e307285ae31, type: 3}
+  wanderingNPC: {fileID: 7056461771069984854, guid: 0c08ba37daf398c4daf32c43a0da0515,
+    type: 3}
+  followingNPC: {fileID: 1714369048396651149, guid: 83a7fe8a96ec76e46a6bf00cef5491ad,
+    type: 3}
+  player: {fileID: 6219910226260531031, guid: f7bc19fa51ba3b64b86604743e7c5f43, type: 3}
+  brocoli: {fileID: 6284422737514173200, guid: 318f71f3f4d402f4fbbb3a48aa404b0c, type: 3}
+  papel: {fileID: 5097739642739073105, guid: c881603841a1e634593cda3ebbef428b, type: 3}
+  agua: {fileID: 7587436252290966865, guid: 576ffc8c2f06f4747a66459ba18a88d3, type: 3}
+  desinfectante: {fileID: 2505905381739274909, guid: 4db3f22b19b05bb4aa550cc20453e25b,
+    type: 3}

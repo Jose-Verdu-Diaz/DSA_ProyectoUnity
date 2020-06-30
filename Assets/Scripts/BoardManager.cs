@@ -11,9 +11,16 @@ namespace Completed
 
     public class BoardManager : MonoBehaviour
     {
-        public GameObject exit;
-        public GameObject[] floorTiles;
-        public GameObject[] wallTiles;
+        public GameObject exitB;
+        public GameObject[] floorTilesB;
+        public GameObject[] wallTilesB;
+
+        public GameObject exitW;
+        public GameObject[] floorTilesW;
+        public GameObject[] wallTilesW;
+
+        public GameObject[] wallTilesR;
+
         public GameObject wanderingNPC;
         public GameObject followingNPC;
         public GameObject player;
@@ -28,15 +35,14 @@ namespace Completed
 
         private Transform boardHolder;
 
-        [Header("Mapas:")]
-        public GameObject[] maps;
-
+        private int levelNumber;
 
         void BoardSetup()
         {
+
             boardHolder = GameObject.Find("Board").transform;
 
-            for (int y =0; y < mapMatrix.Length; y++)
+            for (int y = 0; y < mapMatrix.Length; y++)
             {
                 for (int x = 0; x < mapMatrix[y].Length; x++)
                 {
@@ -44,18 +50,18 @@ namespace Completed
 
                     foreach (string s in objects)
                     {
-                        GameObject toInstantiate = floorTiles[Random.Range(0, floorTiles.Length)];
+                        GameObject toInstantiate = (levelNumber % 2 == 0) ? floorTilesW[Random.Range(0, floorTilesW.Length)] : floorTilesB[Random.Range(0, floorTilesB.Length)];
 
                         switch (s)
                         {
                             case "X":
-                                toInstantiate = wallTiles[Random.Range(0, wallTiles.Length)];
+                                toInstantiate = (levelNumber % 5 == 0) ? wallTilesR[Random.Range(0, wallTilesR.Length)] : (levelNumber % 2 == 0) ? wallTilesW[Random.Range(0, wallTilesW.Length)] : wallTilesB[Random.Range(0, wallTilesB.Length)];
                                 break;
                             case "P":
-                                toInstantiate = wallTiles[Random.Range(0, wallTiles.Length)];
+                                toInstantiate = (levelNumber % 2 == 0) ? wallTilesW[Random.Range(0, wallTilesW.Length)] : wallTilesB[Random.Range(0, wallTilesB.Length)];
                                 break;
                             case "E":
-                                toInstantiate = exit;
+                                toInstantiate = (levelNumber % 2 == 0) ? wallTilesW[Random.Range(0, wallTilesW.Length)] : wallTilesB[Random.Range(0, wallTilesB.Length)];
                                 break;
                             case "C":
                                 toInstantiate = player;
@@ -104,9 +110,13 @@ namespace Completed
         }
 
 
-        public void SetupScene(int level)
+        public void SetupScene(string stringNivel, int levelNumber)
         {
-            ParseMapString(maps[0].GetComponent<Text>().text);
+            //ParseMapString(maps[0].GetComponent<Text>().text);
+            this.levelNumber = levelNumber;
+
+            ParseMapString(stringNivel);
+
             BoardSetup();
         }
     }

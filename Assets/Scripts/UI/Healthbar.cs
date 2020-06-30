@@ -1,11 +1,12 @@
 ﻿using System.Collections;
+using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
 // Only allow this script to be attached to the object with the healthbar slider:
 [RequireComponent(typeof(Slider))]
-public class Healthbar : MonoBehaviour {
-
+public class Healthbar : MonoBehaviour
+{
     // Visible health bar ui:
     private Slider healthbarDisplay;
     public Text healthbarText;
@@ -32,7 +33,7 @@ public class Healthbar : MonoBehaviour {
 
     [Space]
 
-    [Header("Regeneration:")]    
+    [Header("Regeneration:")]
     // If 'regenerateHealth' is checked, character will regenerate health/sec at the rate of 'healthPerSecond':
     public bool regenerateHealth;
     public float healthPerSecond;

@@ -11,7 +11,7 @@ public class WanderingBehaviour : MonoBehaviour
     private float moveSpeedMultiplicator;
 
     private bool moving = false;
-    private float randomSteps=0;
+    private float randomSteps = 0;
 
     // Start is called before the first frame update
     void Start()
@@ -24,29 +24,29 @@ public class WanderingBehaviour : MonoBehaviour
     private void Update()
     {
         if (moving)
-            if (randomSteps>0)
+            if (randomSteps > 0)
             {
-                rb.velocity = direction*moveSpeedMultiplicator;
-                randomSteps-=Time.deltaTime;
+                rb.velocity = direction * moveSpeedMultiplicator;
+                randomSteps -= Time.deltaTime;
             }
             else
             {
                 moving = false;
-                rb.velocity = new Vector2(0f,0f);
+                rb.velocity = new Vector2(0f, 0f);
                 randomSteps = Random.Range(1f, 3f);
             }
         else
             if (randomSteps > 0)
-                randomSteps -= Time.deltaTime;
-            else
-            {
-                direction = Random.insideUnitCircle.normalized;
+            randomSteps -= Time.deltaTime;
+        else
+        {
+            direction = Random.insideUnitCircle.normalized;
 
-                randomSteps = Random.Range(1f, 3f);
-                moveSpeedMultiplicator = Random.Range(1f, 1.5f);
+            randomSteps = Random.Range(1f, 3f);
+            moveSpeedMultiplicator = Random.Range(1f, 1.5f);
 
-                moving = true;
-            }
+            moving = true;
+        }
     }
 
     private void OnCollisionEnter2D(Collision2D collision)
@@ -54,5 +54,4 @@ public class WanderingBehaviour : MonoBehaviour
         if (collision.collider.tag == "Wall")
             direction = Vector2.Perpendicular(direction);
     }
-
 }

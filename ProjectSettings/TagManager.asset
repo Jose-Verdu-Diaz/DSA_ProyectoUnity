@@ -6,8 +6,8 @@ TagManager:
   tags:
   - Item
   - Wall
-  - Estornudo
   - Exit
+  - Estornudo
   layers:
   - Default
   - TransparentFX
@@ -17,10 +17,10 @@ TagManager:
   - UI
   - 
   - 
+  - Player
   - BlockingLayer
   - Estornudo
-  - Player
-  - NPC
+  - 
   - 
   - 
   - 
@@ -46,17 +46,17 @@ TagManager:
     uniqueID: 0
     locked: 0
   - name: Floor
-    uniqueID: 1491696629
+    uniqueID: 2958308881
     locked: 0
   - name: Item
-    uniqueID: 439132933
+    uniqueID: 3626393903
+    locked: 0
+  - name: Player
+    uniqueID: 3294795297
     locked: 0
   - name: Character
-    uniqueID: 489291445
+    uniqueID: 2730204599
     locked: 0
   - name: Estornudo
-    uniqueID: 3592498823
-    locked: 0
-  - name: HUD
-    uniqueID: 3528649841
+    uniqueID: 3618461139
     locked: 0

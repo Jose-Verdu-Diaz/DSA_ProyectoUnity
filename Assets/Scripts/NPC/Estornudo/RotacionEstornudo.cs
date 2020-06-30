@@ -19,10 +19,10 @@ public class RotacionEstornudo : MonoBehaviour
     {
 
         Color tmp = transform.GetComponent<SpriteRenderer>().color;
-        tmp.a = Mathf.Sin(Time.fixedTime * Mathf.PI * frequency)*0.25f + 0.5f;
+        tmp.a = Mathf.Sin(Time.fixedTime * Mathf.PI * frequency) * 0.25f + 0.5f;
         transform.GetComponent<SpriteRenderer>().color = tmp;
 
-        transform.Rotate(new Vector3(0f,0f, rotation));
+        transform.Rotate(new Vector3(0f, 0f, rotation));
 
         Destroy(gameObject, destroyTime);
     }
