@@ -2,6 +2,7 @@
 using System.Collections;
 using System.Collections.Generic;        //Allows us to use Lists. 
 using Completed;
+using UnityEngine.UI;
 
 public class GameManager : MonoBehaviour
 {
@@ -18,6 +19,7 @@ public class GameManager : MonoBehaviour
     void Awake()
     {
         stringNivel = "X,X,X,X,X;X,E.C,,O.B,X;X,X,X,X,X";
+        levelNumber=1;
 
         if (Application.platform == RuntimePlatform.Android)
         {
@@ -63,6 +65,8 @@ public class GameManager : MonoBehaviour
 
     public void finalizarPartida()
     {
+        //Debug.Log(GameObject.Find("Canvas").transform.Find("Time").GetComponent<Text>().text);
+
         int score = 400;
         int time = 30;
         string mask = "FALSE";
